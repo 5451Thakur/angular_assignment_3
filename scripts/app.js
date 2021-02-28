@@ -14,9 +14,9 @@
     nid.searchTerm = "";
 
     nid.search = function(){
+      nid.found = "";
       if(nid.searchTerm.length != 0){
         var promise = MenuSearchService.getMatchedMenuItems(nid.searchTerm);
-        nid.found = "";
         promise.then(function(response){
           var num_items_found = response.data.length;
           if( num_items_found > 0){
