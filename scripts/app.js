@@ -10,8 +10,8 @@
   function NarrowItDownController(MenuSearchService){
     var nid = this;
     var items = [];
-    // nid.message = "";
-    // nid.searchTerm = "";
+    nid.message = "";
+    nid.searchTerm = "";
 
     nid.search = function(){
       if(nid.searchTerm.length != 0){
@@ -31,8 +31,13 @@
     };
 
     nid.remove = function (itemIndex) {
-      console.log("I got: " + itemIndex);
-    nid.found.splice(itemIndex, 1);
+      nid.found.splice(itemIndex, 1);
+      var num_items_left = nid.found.length;
+      if(num_items_left > 0){
+      nid.message = ("Remaining "+ num_items_left + " matching items for " + nid.searchTerm);
+      }
+      else{nid.message = "All items deleted";}
+
   };
 
   }
