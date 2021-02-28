@@ -1,0 +1,10 @@
+<table class="table">
+  <tr ng-repeat="item in items">
+    <td class="sname">{{item.short_name}}</td>
+    <td class="name">{{item.name}}</td>
+    <td class="desc">{{item.description}}</td>
+    <td class="btn">
+      <button type="btn btn-sm" name="button"
+      ng-click="remove({index: $index})">Don't want this one!</button> </td>
+  </tr>
+</table>
